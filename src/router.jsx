@@ -6,7 +6,27 @@ export const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                element: <Trend/>
+                index: true,
+                element: <Home/>
+            },
+            {
+                path: '/movies',
+                element: <Movies/>
+            },
+            {
+                path: '/movies/:movieId',
+                element: <MovieDetails />,
+                children: [
+                {
+                    path: '/movies/:movieId/cast',
+                    element: <Cast/>
+                },
+                {
+                    path: '/movies/:movieId/reviews',
+                    element: <Reviews/>
+                }
+                  
+]
             }
         ]
     }
